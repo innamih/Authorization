@@ -2,215 +2,163 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
-
-*,
-*::after,
-*::before {
-    box-sizing: inherit;
-}
-
 
 body {
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    min-height: 100vh;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(300deg, rgba(202, 231, 224, 1) 1%, rgba(127, 242, 177, 1) 100%);
 }
 
 .container {
+    max-width: 700px;
     width: 100%;
+    background: #f1c5ee;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.container .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(300deg, rgba(202, 231, 224, 1) 1%, rgba(127, 242, 177, 1) 100%);
+}
+
+.container form .user-details {
     display: flex;
-
-
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
 }
 
-.logo {
-    font-weight: 600;
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: rgba(127, 242, 177, 1);
+}
+
+form .gender-details .gender-title {
     font-size: 20px;
-    line-height: 30px;
-    color: #000000;
-    text-decoration: none;
+    font-weight: 500;
+}
+
+form .gender-details .category {
+    display: flex;    
+    width: 40%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label {
+    display: flex;    
+    align-items: center;
+}
+
+.gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    background: #ceaee0;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    /*#ad59de;*/
+    transition: all 0.3s ease;
+}
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two {
+    border-color: #ceaee0;
+    background: #ad59de;
+}
+
+form input[type="radio"] {
+    display: none;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #ad59de;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(300deg, rgba(202, 231, 224, 1) 1%, rgba(182, 109, 204, 1) 100%);
+}
+
+form .button input:hover {
+    background: linear-gradient(-300deg, rgba(202, 231, 224, 1) 1%, rgba(182, 109, 204, 1) 100%);
 
 }
 
-
-.form {
-    flex: 1 0 auto;
-    flex-direction: column;
-    margin-top: 31px;
-    margin-left: 42px;
-
-}
-
-@media (max-width:1200px) {
-    .promo {
-        padding: 0 20px;
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
     }
-}
 
-@media (max-width:500px) {
-    .form-box {
-        padding: 0 20px;
+    form .user-details .input-box {
+        margin-bottom: 15px;
         width: 100%;
     }
 
-    .btn-box {
-        flex-basis: 100%;
+    form .gender-details .category {
+        width: 70%;
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
     }
 }
-
-.form-content {
-    width: 100%;
-    max-width: 431px;
-    padding-top: 102px;
-    padding-bottom: 102px;
-    align-items: center;
-    /* не работает из-за auto*/
-}
-
-.form-title {
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 45px;
-    color: #000000;
-    display: block;
-    margin-bottom: 22px;
-}
-
-.form-subtitle {
-    font-size: 16px;
-    line-height: 24px;
-    color: #000000;
-    margin-bottom: 6px;
-
-}
-
-.form-link {
-    color: #0C21C1;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration: none;
-    margin-bottom: 55px;
-}
-
-.input-box {
-    box-sizing: border-box;
-    margin-bottom: 49px;
-    width: 100%;
-    padding-bottom: 9px;
-    padding-left: 27px;
-    border-bottom: 2px solid #999999;
-}
-
-.input-box:hover {
-    border-bottom: 2px solid #000842;
-    color: #000842;
-}
-
-.input-box-info {
-    display: block;
-    margin-bottom: 11px;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 20px;
-    color: #999999;
-    user-select: none;
-}
-
-
-.form-box {
-    margin-top: 55px;
-}
-
-.input-box-icon {
-    margin-bottom: 0px;
-}
-
-.btn-box button {
-    margin-top: 109px;
-    background: #0C21C1;
-    box-shadow: 0px 4px 26px rgba(0, 0, 0, 0.25);
-    border-radius: 32px;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 26px;
-    color: #FFFFFF;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-    padding-top: 14px;
-    padding-bottom: 14px;
-}
-
-.form-box-social {
-    margin-top: 36px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-box-social-info {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #B5B5B5;
-    margin-bottom: 31px;
-}
-
-.form-box-social-items {
-    display: flex;
-
-}
-
-.form-box-social-items a {
-    margin-right: 20px;
-}
-
-.promo {
-    flex: 0 0 735px;
-    display: flex;
-    flex-direction: column;
-    padding: 21px;
-}
-
-.promo-box {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #000842;
-    border-radius: 15px;
-
-}
-
-.promo-content img {
-    width: 100%;
-    max-width: 559px;
-    height: auto;
-    margin-bottom: 90px;
-}
-
-.promo-content h1 {
-    font-weight: 600;
-    font-size: 40px;
-    line-height: 60px;
-    color: #FFFFFF;
-    margin-bottom: 4px;
-}
-
-.promo-subtitle {
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 30px;
-    color: #FFFFFF;
-    display: block;
-}
-
-@media (max-width:1200px) {
-    .promo {
-        display: none;
+@media (max-width: 320px) {
+    .container .title {
+        width: 100%;
+        justify-content: center;
+        
     }
 }

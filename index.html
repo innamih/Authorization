@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authorization</title>
+    <title>Authorization-form2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,48 +15,55 @@
 
 <body>
     <div class="container">
-        <section class="form">
-            <a href="./sign-up.html" class="form-logo logo">Your Logo</a>
-            <div class="form-content">
-                <h1 class="form-title">Sign in</h1>
-                <p class="form-subtitle">If you don’t have an account register</p>
-                <p class="form-subtitle">You can <a href="#" class="form-link">Register here !</a>
-                </p>
-                <form action="#" class="form-form-box form-box">
-                    <div class="form-box-input-box input-box">
-                        <label class="input-box-info" for="email">Email</label>
-                        <label class="input-box-icon" for="email"><img src="img/email.svg" alt="email"></label>
-                        <input type="email" name="email" id="email" placeholder="Enter your email address">
-                    </div>
-                    <div class="form-box-input-box input-box">
-                        <label class="input-box-info" for="password">Password</label>
-                        <label class="input-box-icon" for="password"><img src="img/password.svg" alt="password"></label>
-                        <input type="password" name="password" id="password" placeholder="Enter your password">
-                    </div>
-                    <div class="form-box-btn-box btn-box">
-                        <button type="submit">Login</button>
-                    </div>
-                    <div class="form-box-social">
-                        <span class="form-box-social-info">or continue with</span>
-                        <div class="form-box-social-items">
-                            <a href="#"><img src="img/facebook.svg" alt="facebook"></a>
-                            <a href="#"><img src="img/apple.svg" alt="apple"></a>
-                            <a href="#"><img src="img/google.svg" alt="google"></a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-        <section class="promo">
-            <div class="promo-box">
-                <div class="promo-content">
-                    <img src="img/saly.png" alt="saly" class="promo-img">
-                    <h1 class="promo-title">Sign in to name</h1>
-                    <p class="promo-subtitle">Lorem Ipsum is simply </p>
+        <div class="title">Registration</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter your username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone number</span>
+                    <input type="text" placeholder="Enter your number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter your password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="text" placeholder="Confirm your password" required>
                 </div>
             </div>
-        </section>
+            <div class="gender-details">
+                <input type="radio" name="gender" id="dot-1">
+                <input type="radio" name="gender" id="dot-2">                
+                <span class="gender-title">Gender</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Female</span>
+                    </label>                    
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
     </div>
+
 </body>
 
 </html>
